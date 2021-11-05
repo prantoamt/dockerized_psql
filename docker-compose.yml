@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  db:
+    container_name: postgresdb
+    image: postgres:12
+    restart: "always"
+    env_file:
+      - project.prod.env
+    ports:
+      - "5432:5432" 
+    network_mode: "bridge"  
+    volumes:
+      - postgres-data:/appl/docker_data/postgresql/data
+      - /home/ubuntu/projects/psql_docker/backups:/backups
+volumes:
+  postgres-data:
+

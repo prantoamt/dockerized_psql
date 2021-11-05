@@ -1,0 +1,4 @@
+psql database dump:
+     pg_dump -Fc -h 127.0.0.1 -U strativadmin strativerp -f /home/ubuntu/projects/psql_docker/backups/dump-09-10-21.dump
+psql dabase restore:
+    pg_restore -d strativerp -U strativadmin dump-09-10-21.dump
